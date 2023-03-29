@@ -19,7 +19,7 @@ defmodule Mechs.MixProject do
   def application do
     [
       mod: {Mechs.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :grpc]
     ]
   end
 
@@ -32,6 +32,8 @@ defmodule Mechs.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:protobuf, "~> 0.10.0"},
+      {:cowboy, "~> 2.9"},
       {:phoenix, "~> 1.7.2"},
       {:phoenix_ecto, "~> 4.4"},
       {:ecto_sql, "~> 3.6"},
@@ -49,7 +51,8 @@ defmodule Mechs.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:grpc, "~> 0.5.0"}
     ]
   end
 
